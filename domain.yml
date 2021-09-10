@@ -1,0 +1,350 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - Symptom_checker
+  - Disease_info
+  - Diet_suggestions
+  - Disease_Symptoms
+  - Hospitals_near_me
+  - help_me
+  - Heart_Disease
+  - Corona_Virus_Disease
+  - Malaria
+  - Cancer
+  - Tuberculosis
+  - Chikungunya
+  - Typhoid
+  - Diabetes
+  - Asthma
+  - Heart_Disease_Symp
+  - Corona_Virus_Disease_Symptoms
+  - Malaria_Symptoms
+  - Cancer_Symptoms
+  - Tuberculosis_Symptoms
+  - Chikungunya_Symptoms
+  - Typhoid_Symptoms
+  - Diabetes_Symptoms
+  - Asthma_Symptoms
+  - list_again
+  - Appointment
+  - user_thanks
+  - Other_Disease:
+      use_entities:
+      - new_disease
+  - Other_Symptom:
+      use_entities:
+      - new_disease
+  - Location:
+      use_entities:
+      - location
+  - my_name:
+      use_entities:
+      - name
+  - mobile_number:
+      use_entities:
+      - number
+  - User_symptoms_info:
+      use_entities:
+      - SYMPTOM
+  - my_email:
+      use_entities:
+      - email
+  - my_age:
+      use_entities:
+      - age
+  - my_gender:
+      use_entities:
+      - gender
+  - reason_appointment:
+      use_entities:
+      - reason
+  - time_slot:
+      use_entities:
+      - time
+  - user_Symp:
+      use_entities:
+      - user_symptoms
+  - out_of_scope
+  - chitchat
+  - nlu_fallback
+
+entities:
+- SYMPTOM
+- location
+- name
+- number
+- email
+- age
+- gender
+- new_disease
+- reason
+- time
+- user_symptoms
+
+slots:
+  new_disease:
+    type: text
+    influence_conversation: false
+  SYMPTOM:
+    type: list
+  location:
+    type: text
+    influence_conversation: false
+  name:
+    type: text
+    influence_conversation: false
+  number:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  age:
+    type: text
+    influence_conversation: false
+  gender:
+    type: text
+  reason:
+    type: text
+  time:
+    type: text
+  user_symptoms:
+    type: text
+
+responses:
+  utter_out_of_scope:
+  - text: Sorry! I didn't get what you said. Ask me about Healthcare
+  - text: You are going off topic! Ask me about Healthcare
+  - text: Sorry! I am not trained for this. Ask me about Healthcare
+
+  utter_ask_location:
+  - text: Sure! What is your city name?
+  - text: Please provide me with your city name
+
+  utter_sure_user_details:
+  - text: Sure! First I will be needing some details
+  utter_ask_name:
+  - text: Please mention your Full Name (eg- Karan Gori)
+  utter_ask_number:
+  - text: "{name}, please mention your Mobile Number:"
+  utter_ask_email:
+  - text: 'Please mention your Email id:'
+  utter_ask_age:
+  - text: 'Please enter your Age :'
+  utter_ask_gender:
+  - text: 'Please mention your Gender (M/F/O):'
+
+  utter_details_thanks:
+  - text: "Thanks for providing the details!\nName: {Name}\nMobile number: {Mobile_number}\nEmail: {Email}\nAge: {Age}\nGender: {Gender}\nReason: {Reason}"
+  utter_ask_reason:
+  - buttons:
+    - title: Doctor Visit
+      payload: /reason_appointment{"reason":"Doctor Visit"}
+    - title: Blood Test
+      payload: /reason_appointment{"reason":"Blood Test"}
+    - title: X Ray
+      payload: /reason_appointment{"reason":"X Ray"}
+    - title: Other
+      payload: /reason_appointment{"reason":"Other"}
+    text: "Please select your reason for Appointment:"
+  utter_ask_time:
+  - buttons:
+    - title: "9:00AM"
+      payload: /time_slot{"time":"9AM"}
+    - title: "11:00AM"
+      payload: /time_slot{"time":"11AM"}
+    - title: "2:00PM"
+      payload: /time_slot{"time":"2PM"}
+    - title: "4:00PM"
+      payload: /time_slot{"time":"4PM"}
+    text: "Select your preferable time slot from the working hours:"
+  utter_choose_button:
+  - buttons:
+    - payload: /Symptom_checker
+      title: Symptom Checker
+    - payload: /Disease_info
+      title: Disease Info
+    - payload: /Diet_suggestions
+      title: Diet Suggestions
+    - payload: /Disease_Symptoms
+      title: Disease Symptoms
+    - payload: /Hospitals_near_me
+      title: Hospitals Near Me
+    - payload: /Appointment
+      title: Appointment
+    text: Select what you are looking for
+  utter_disease_symptoms1:
+  - buttons:
+    - payload: /Heart_Disease_Symp
+      title: Heart Disease Symptoms
+    - payload: /Corona_Virus_Disease_Symptoms
+      title: Corona Virus Disease Symptoms
+    - payload: /Malaria_Symptoms
+      title: Malaria Symptoms
+    - payload: /Cancer_Symptoms
+      title: Cancer Symptoms
+    - payload: /Tuberculosis_Symptoms
+      title: Tuberculosis Symptoms
+    - payload: /Chikungunya_Symptoms
+      title: Chikungunya Symptoms
+    - payload: /Typhoid_Symptoms
+      title: Typhoid Symptoms
+    - payload: /Diabetes_Symptoms
+      title: Diabetes Symptoms
+    - payload: /Asthma_Symptoms
+      title: Asthma Symptoms
+    text: 'Select the disease for symptom: Or type the symptom other than specified below'
+  utter_disease_info1:
+  - buttons:
+    - payload: /Heart_Disease
+      title: Heart Disease
+    - payload: /Corona_Virus_Disease
+      title: Corona Virus Disease
+    - payload: /Malaria
+      title: Malaria
+    - payload: /Cancer
+      title: Cancer
+    - payload: /Tuberculosis
+      title: Tuberculosis
+    - payload: /Chikungunya
+      title: Chikungunya
+    - payload: /Typhoid
+      title: Typhoid
+    - payload: /Diabetes
+      title: Diabetes
+    - payload: /Asthma
+      title: Asthma
+    text: 'Select the disease you want to know about: Or type the disease other than specified below'
+
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: Hi! How can I help?
+  - text: Hello! What are you looking for?
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: Did I predict it right?
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: Happy to help
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: Goodbye! Take care
+  - text: See Ya
+  - text: Enjoy your day!
+  - text: Sayonara!
+
+  utter_chitchat/bot_challenge:
+  - text: "I am a Healthcare Assistant!"
+
+  utter_chitchat/developer:
+  - text: "My Creators are:\n1)Smit Patel\n2)Karan Gori\n3)Harsh Gori"
+  utter_symptom_checker:
+  - text: Select for which disease you want to have a medical check-up
+  utter_disease_info:
+  - text: Select the disease you want to know about
+  utter_diet_suggestion:
+  - text: Select your goal
+  utter_disease_symptoms:
+  - text: Select the disease
+  utter_wrong_data:
+  - text: Thanks for your feedback
+  - text: Sorry! I will try to be better next time
+  - text: Okay! I will try to learn from this
+  utter_heart_disease:
+  - text: Cardiovascular diseases (CVDs) are the leading cause of death globally.Heart attacks and strokes are usually acute events and are mainly caused by a blockage that prevents blood from flowing to the heart or brain. The most common reason for this is a build-up of fatty deposits on the inner walls of the blood vessels that supply the heart or brain. Strokes can be caused by bleeding from a blood vessel in the brain or from blood clots.
+  utter_corona_virus_disease:
+  - text: Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
+  utter_malaria:
+  - text: Malaria is a life-threatening disease caused by parasites that are transmitted to people through the bites of infected female Anopheles mosquitoes. It is preventable and curable. There are 5 parasite species that cause malaria in humans, and 2 of these species – Plasmodium falciparum and Plasmodium vivax – pose the greatest threat.
+  utter_cancer:
+  - text: Cancer is a generic term for a large group of diseases that can affect any part of the body. Other terms used are malignant tumours and neoplasms. One defining feature of cancer is the rapid creation of abnormal cells that grow beyond their usual boundaries, and which can then invade adjoining parts of the body and spread to other organs; the latter process is referred to as metastasis. Metastases are  the primary cause of death from cancer.
+  utter_tuberculosis:
+  - text: TB is caused by bacteria (Mycobacterium tuberculosis) and it most often affects the lungs. TB is spread through the air when people with lung TB cough, sneeze or spit. A person needs to inhale only a few germs to become infected.
+  utter_chikungunya:
+  - text: Chikungunya is a mosquito-borne viral disease that causes fever and severe joint pain. The disease was first recognized in 1952 during an outbreak in southern Tanzania. It is a ribonucleic acid (RNA) virus that belongs to the alphavirus genus of the family Togaviridae. The name “chikungunya” derives from a word in the Kimakonde language of southern Tanzania, meaning “to become contorted”, and describes the stooped appearance of sufferers with joint pain (arthralgia).
+  utter_typhoid:
+  - text: Typhoid fever is a life-threatening systemic infection caused by the bacterium Salmonella enterica serovar Typhi (commonly known as Salmonella Typhi). Typhoid is usually spread through the ingestion of contaminated food or water.
+  utter_diabetes:
+  - text: Diabetes is a chronic, metabolic disease characterized by elevated levels of blood glucose (or blood sugar), which leads over time to serious damage to the heart, blood vessels, eyes, kidneys and nerves. The most common is type 2 diabetes, usually in adults, which occurs when the body becomes resistant to insulin or doesn't make enough insulin.
+  utter_asthma:
+  - text: Asthma is a long-term condition affecting children and adults. The air passages in the lungs become narrow due to inflammation and tightening of the muscles around the small airways.
+  utter_heart_disease_symp:
+  - text: "Often, there are no symptoms of the underlying disease of the blood vessels. A heart attack or stroke may be the first sign of underlying disease. Symptoms of a heart attack include\n1)pain or discomfort in the centre of the chest;\n2)pain or discomfort in the arms, the left shoulder, elbows, jaw, or back."
+  utter_corona_virus_disease_symptoms:
+  - text: "1)Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment.\n2)Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness."
+  utter_malaria_symptoms:
+  - text: "Symptoms for the Malaria Disease are as follows.....\n1)The first symptoms – fever, headache, and chills – may be mild and difficult to recognize as malaria.\n2)If not treated within 24 hours, Plasmodium falciparum malaria can progress to severe illness, and lead to death."
+  utter_cancer_symptoms:
+  - text: "Symptoms for the Cancer Disease are as follows.....\n1)Fatigue\n2)Lump or area of thickening that can be felt under the skin\n3)Weight changes, including unintended loss or gain\n4)Skin changes, such as yellowing, darkening or redness of the skin, sores that won't heal, or changes to existing moles\n5)Changes in bowel or bladder habits\n6)Persistent cough or trouble breathing."
+  utter_tuberculosis_symptoms:
+  - text: "Symptoms for the Tuberculosis Disease are as follows.....\n1)Prolonged cough\n2)Chest pain\n3)Weakness or fatigue\n4)Weight loss\n5)Fever\n6)Night sweats"
+  utter_chikungunya_symptoms:
+  - text: "Symptoms for the Chikungunya Disease are as follows.....\n1)Muscle pain\n2)Headache\n3)Nausea\n4)Fatigue and rash"
+  utter_typhoid_symptoms:
+  - text: "Symptoms for the typhoid Disease are as follows.....\n1)Prolonged high fever\n2)Fatigue, headache, nausea\n3)Abdominal pain\n4)constipation or diarrhoea\n5)Rash in some cases"
+  utter_diabetes_symptoms:
+  - text: "Diabetes of all types can lead to complications in many parts of the body and can increase the overall risk of dying prematurely.\n1)Possible complications include kidney failure, leg amputation, vision loss and nerve damage.\n2)Adults with diabetes also have two- to three-fold increased risk of heart attacks and strokes.\n3)In pregnancy, poorly controlled diabetes increases the risk of fetal death and other complications."
+  utter_asthma_symptoms:
+  - text: "Common symptoms for Asthma can be:\n1)Cough\n2)Wheeze\n3)Shortness of breath and chest tightness."
+  utter_user_Symptom_info:
+  - text: Tell me the symptoms you are facing
+  utter_thanks:
+  - text: Thank You for providing the details
+  utter_welcome:
+  - text: You are welcome!
+  - text: My pleasure!
+  - text: At your service!
+
+  utter_enter_symp:
+  - text: Please enter the symptoms in comma separated format. Eg-(cough, fever, cold,... etc.)
+  utter_please_wait:
+  - text: Please wait while I am predicting the disease...
+
+actions:
+- action_submit
+- action_ask_location
+- action_new_disease_info
+- action_new_symptom_info
+- action_prediction
+
+forms:
+  user_details_form:
+    name:
+      - type: from_entity
+        entity: name
+    number:
+      - type: from_entity
+        entity: number
+    email:
+      - type: from_entity
+        entity: email
+    age:
+      - type: from_entity
+        entity: age
+    gender:
+      - type: from_entity
+        entity: gender
+    reason:
+      - type: from_entity
+        entity: reason
+    time:
+      - type: from_entity
+        entity: time
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

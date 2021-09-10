@@ -1,0 +1,309 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+- story: FEEDBACK
+  steps:
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_wrong_data
+
+- story: SYMPTOM CHECKER
+  steps:
+    - intent: Symptom_checker
+    - action: utter_user_Symptom_info
+    - intent: User_symptoms_info
+      entities:
+      - SYMPTOM: "cold"
+    - slot_was_set:
+        - SYMPTOM: "cold"
+    - action: utter_thanks
+
+- story: DIET SUGGESTIONS
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: help_me
+  - action: utter_choose_button
+  - intent: Diet_suggestions
+  - action: utter_diet_suggestion
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO HEART
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Heart_Disease
+  - action: utter_heart_disease
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO CORONA
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Corona_Virus_Disease
+  - action: utter_corona_virus_disease
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO MALARIA
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Malaria
+  - action: utter_malaria
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO CANCER
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Cancer
+  - action: utter_cancer
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO TUBERCULOSIS
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Tuberculosis
+  - action: utter_tuberculosis
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO CHIKUNGUNYA
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Chikungunya
+  - action: utter_chikungunya
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO TYPHOID
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Typhoid
+  - action: utter_typhoid
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO DIABETES
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Diabetes
+  - action: utter_diabetes
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE INFO ASTHMA
+  steps:
+  - intent: Disease_info
+  - action: utter_disease_info1
+  - intent: Asthma
+  - action: utter_asthma
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS HEART
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Heart_Disease_Symp
+  - action: utter_heart_disease_symp
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS CORONA
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Corona_Virus_Disease_Symptoms
+  - action: utter_corona_virus_disease_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS MALARIA
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Malaria_Symptoms
+  - action: utter_malaria_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS CANCER
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Cancer_Symptoms
+  - action: utter_cancer_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS TUBERCULOSIS
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Tuberculosis_Symptoms
+  - action: utter_tuberculosis_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS CHIKUNGUNYA
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Chikungunya_Symptoms
+  - action: utter_chikungunya_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS TYPHOID
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Typhoid_Symptoms
+  - action: utter_typhoid_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS DIABETES
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Diabetes_Symptoms
+  - action: utter_diabetes_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: DISEASE SYMPTOMS ASTHMA
+  steps:
+  - intent: Disease_Symptoms
+  - action: utter_disease_symptoms1
+  - intent: Asthma_Symptoms
+  - action: utter_asthma_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: HOSPITAL_NEAR_ME
+  steps:
+  - intent: Hospitals_near_me
+  - action: utter_ask_location
+  - intent: Location
+    entities:
+    - location: "Ghatkopar"
+  - slot_was_set:
+      - location: "Ghatkopar"
+  - action: action_ask_location
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: GREET
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: LIST_AGAIN
+  steps:
+  - intent: list_again
+  - action: utter_choose_button
+
+- story: HELP_ME
+  steps:
+  - intent: help_me
+  - action: utter_choose_button
+
+- story: All Disease
+  steps:
+  - intent: Other_Disease
+    entities:
+    - new_disease: "Malnutrition"
+  - slot_was_set:
+      - new_disease: "Malnutrition"
+  - action: action_new_disease_info
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: All Symptom
+  steps:
+  - intent: Other_Symptom
+    entities:
+    - new_disease: "Obesity"
+  - slot_was_set:
+      - new_disease: "Obesity"
+  - action: action_new_symptom_info
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: Disease_prediction
+  steps:
+  - intent: Symptom_checker
+  - action: utter_enter_symp
+  - intent: user_Symp
+    entities:
+      - user_symptoms: "cough,fever,cold,tiredness,headache,vomiting"
+  - slot_was_set:
+      - user_symptoms: "cough,fever,cold,tiredness,headache,vomiting"
+  - action: utter_please_wait
+  - action: action_prediction
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy

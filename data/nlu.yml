@@ -1,0 +1,608 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - morninig
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - wassup
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - c ya
+    - i need to go
+    - i am going
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - right
+    - thats right
+    - you are right
+    - your are right
+    - nice prediction
+    - yes it helped me
+    - great! helped for me
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - wrong
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+#Chitchat
+- intent: chitchat/bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - what is your name?
+    - do you have a name for yourself?
+    - what do people call you
+
+- intent: chitchat/developer
+  examples: |
+    - who created you?
+    - who made you?
+    - how do you exist?
+    - your creators?
+    - how were you developed
+    - what are your creators?
+    - what is name of your developers?
+    - your developer?
+
+- intent: user_thanks
+  examples: |
+    - thank you very much
+    - thanks for helping out
+    - thank you so much
+    - i am so thankful to you
+    - ok thanks
+    - thanks
+    - thank you
+    - ok got it
+
+- intent: help_me
+  examples: |
+    - what can i get here
+    - show me your services
+    - services
+    - need info about healthcare
+    - i want to know about the services provided
+    - what does this chatbot do
+    - what can you do
+    - what all can I check here
+    - show me the services provided
+
+- intent: list_again
+  examples: |
+    - i want to choose again
+    - show me the options again
+    - give the list again
+    - i want the list again
+    - give me the option again
+    - give me list again
+    - can you go back to the buttons again?
+
+- intent: Symptom_checker
+  examples: |
+    - i want to have a medical check-up
+    - i would like to check my health
+    - Symptom checker
+    - can you check my symptoms
+    - what am i suffering from
+    - find out what disease am i having
+    - i am not feeling good
+    - i am sick
+    - what disease i must be having?
+    - why am i facing these symptoms?
+    - how do i know i have this disease?
+
+- intent: Disease_info
+  examples: |
+    - disease info
+    - diseaseinfo
+    - show information about diseases
+    - i want to know more about diseases
+    - can you explain more about the diseases
+
+- intent: Diet_suggestions
+  examples: |
+    - diet suggestions
+    - dietsuggestions
+
+- intent: Disease_Symptoms
+  examples: |
+    - disease Symptoms
+    - diseaseSymptoms
+    - what can be various symptoms for the various diseases
+
+#HOSPITAL NEAR ME FORM
+- intent: Hospitals_near_me
+  examples: |
+    - list the Hospitals near me
+    - hospital located in my region
+    - what are the hospitals residing in my area
+    - give hospitals present near my vicinity
+    - nearest nursing home
+    - give me address of nearby hospital
+    - what is the nearest hospital near me
+    - help me get to the nearest hospital
+    - how many hospitals present in my locality
+    - all hospitals in my region
+    - find me a nearby hospital
+    - list some hospitals near by
+    - tell me the hospitals which are near my locality
+    - can i get the names and address of the hospitals near by me
+    - can i have some info of the hospitals near by me
+    - i want to have the details of the hospitals near by me
+    - can you provide the details of the hospitals like address name and phone number ,which are near by me
+
+- intent: Location
+  examples: |
+    - I live in [Ghatkopar]{"entity":"location"}
+    - My region is [Vikhroli]{"entity":"location"}
+    - [Vidyavihar]{"entity":"location"} is my address
+    - I am currently residing in [Kurla]{"entity":"location"}
+    - [Dadar]{"entity":"location"} district suburban
+    - I reside in [Parel]{"entity":"location"}
+    - my address is [Sion]{"entity":"location"}
+    - [Thane]{"entity":"location"} is my city
+    - [Dombivli]{"entity":"location"} is my district name
+    - [Kalyan]{"entity":"location"} is my town
+    - [Mahim]{"entity":"location"} district
+    - [Bandra]{"entity":"location"} city
+    - West [Chembur]{"entity":"location"}
+    - East [Andheri]{"entity":"location"}
+    - [Borivali]{"entity":"location"} East
+    - [Byculla]{"entity":"location"} West
+    - my city is [Juhu]{"entity":"location"} south
+    - I live at [Ville Parle]{"entity":"location"}
+    - my locality is [Navi Mumbai]{"entity":"location"} central
+    - my district is [South Bombay]{"entity":"location"}
+    - my town is [South Mumbai]{"entity":"location"}
+    - Rural [Govandi]{"entity":"location"}
+    - Urban [Vashi]{"entity":"location"}
+
+- intent: my_name
+  examples: |
+    - my name is [Smit Patel]{"entity":"name"}
+    - [smit]{"entity":"name"} is my name
+    - [Sundar Topibaz]{"entity":"name"}
+    - my name is [Karan Gori]{"entity":"name"}
+    - [Harsh Gori]{"entity":"name"}
+    - My name is [Drishti Parekh]{"entity":"name"}
+    - My name is [Aaradhya Ganshyam]{"entity":"name"}
+    - [Ishita Shetty]{"entity":"name"} is my name
+    - My name is [Kashvi Gala]{"entity":"name"}
+    - My name is [Tanvi Talwar]{"entity":"name"}
+    - My name is [Aaradhya Shah]{"entity":"name"}
+    - [Sneha Pawar]{"entity":"name"}
+    - [Sachin Tendulkar]{"entity":"name"}
+    - [Virat Kohli]{"entity":"name"} is my name
+    - [Jash Bhanushali]{"entity":"name"}
+    - [Kevin Upadhyay]{"entity":"name"} is my name
+    - [Nimit Panchal]{"entity":"name"} is my name
+    - [Ranbir Kapoor]{"entity":"name"} is my name
+    - Here is my name [Taksh Zaveri]{"entity":"name"}
+    - [Yug Gupta]{"entity":"name"}
+
+- regex: name
+  examples: |
+    - [A-Z]+[a-z]+
+
+- regex: number
+  examples: |
+    - \d{10}
+
+- regex: email
+  examples: |
+    - [\w!#$%&'/=?^.+*-]+@[\w.-]+$
+
+- regex: age
+  examples: |
+    - \d{2}
+
+
+#- regex: gender
+#  examples:
+
+- intent: mobile_number
+  examples: |
+    - my number is [9876543210]{"entity":"number"}
+    - [9876543210]{"entity":"number"} is my mobile number
+    - [9876543210]{"entity":"number"}
+    - [1234567890]{"entity":"number"}
+    - [1234567890]{"entity":"number"} is my mobile number
+    - here it is [8168276390]{"entity":"number"}
+    - yes this is my mobile number [9618697981]{"entity":"number"}
+    - [9816141231]{"entity":"number"}
+
+- intent: my_age
+  examples: |
+    - my age is [32]{"entity":"age"}
+    - [18]{"entity":"age"} is my current age
+    - i am [20]{"entity":"age"} years old
+    - [21]{"entity":"age"} year old
+    - [30]{"entity":"age"} old
+    - [24]{"entity":"age"}
+    - i am [22]{"entity":"age"} years old
+    - [19]{"entity":"age"} is my age
+
+
+- intent: my_gender
+  examples: |
+    - i am [male]{"entity":"gender"}
+    - [female]{"entity":"gender"}
+    - my gender is [female]{"entity":"gender"}
+    - my gender is [M]{"entity":"gender"}
+    - [F]{"entity":"gender"}
+    - i am [O]{"entity":"gender"}
+    - I come under the gender [Other]{"entity":"gender"}
+    - [M]{"entity":"gender"}
+    - [male]{"entity":"gender"}
+
+- intent: my_email
+  examples: |
+    - my mail id is [abc@gmail.com]{"entity":"email"}
+    - [smitpatel@gmail.com]{"entity":"email"} is my email
+    - here is my email address [123@gmail.com]{"entity":"email"}
+    - my electronic mail id is [xyz_@hotmail.com]{"entity":"email"}
+    - my email address is [abc@gmail.com]{"entity":"email"}
+    - [smit123@sakec.ac.in]{"entity":"email"}
+    - note this as my active mail address [karan2726@outlook.com]{"entity":"email"}
+    - [harsh2893@yahoo.com]{"entity":"email"}
+
+
+- intent: Heart_Disease
+  examples: |
+    - more info about heart disease
+    - something more about heartdiease
+    - need info about cardiovascular diseases
+    - give information about heard diseases
+    - what is heart disease exactly?
+    - elaborate heart disease for me
+    - why does cardiac arrest occur?
+
+- intent: Corona_Virus_Disease
+  examples: |
+    - corona virus disease
+    - Novel corona virus info
+    - COVID
+    - what is corona virus
+    - want to know more about corona disease
+    - give information about corona
+    - what is covid-19?
+    - why is corona is dangerous?
+
+- intent: Malaria
+  examples: |
+    - what is malaria
+    - Malaria disease info
+    - information about malaria disease
+    - tell me more about malaria
+    - show information about malaria
+    - need to know about malaria
+
+- intent: Cancer
+  examples: |
+    - cancer info
+    - disease information of Cancer
+    - provide information about cancer
+    - i want to learn more about cancer
+    - tell me about cancer disease
+
+- intent: Tuberculosis
+  examples: |
+    - information about tuberculosis disease
+    - what is Tuberculosis?
+    - tell me more about tuberculosis
+    - provide information about tuberculosis
+    - i want to learn more about tuberculosis
+    - TB
+    - What is TB?
+
+- intent: Chikungunya
+  examples: |
+    - chikungunya disease info
+    - give information about Chikungunya disease
+    - provide information about chikungunya
+    - i want to learn more about chikungunya
+    - what is chikungunya disease
+
+- intent: Typhoid
+  examples: |
+    - typhoid disease information
+    - tell me something about Typhoid disease
+    - provide information about typhoid
+    - i want to learn more about typhoid
+    - something more about typhoid disease
+
+- intent: Asthma
+  examples: |
+    - asthma
+    - Asthma
+    - how is asthma caused
+    - tell me something about asthma
+    - show me information about the asthma
+    - is asthma a matter of concern
+
+- intent: Diabetes
+  examples: |
+    - diabetes
+    - Diabetes
+    - provide information about Diabetes
+    - can you tell me something on diabetes
+    - do you know anything about Diabetes
+
+# 2nd level
+# Intents for disease symptoms
+- intent: Heart_Disease_Symp
+  examples: |
+    - heart disease symptoms
+    - symptoms of heart disease
+    - heartdiease symptoms
+    - symptoms of cardio diseases
+    - what are symptoms for heart disease
+    - how do i know i have cardio vascular disease?
+    - common symptoms for heart diseases?
+    - give more information, data, facts, about heart problems
+
+- intent: Corona_Virus_Disease_Symptoms
+  examples: |
+    - corona virus disease symptoms
+    - coronavirus disease symptoms
+    - coronavirus symptoms
+    - corona virus symptoms
+    - give symptoms of covid-19
+    - show the symptoms of corona
+    - symptoms for noval corona virus
+
+- intent: Malaria_Symptoms
+  examples: |
+    - malaria symptoms
+    - Malaria symptoms
+    - give me symptoms of malaria
+    - show the symptoms of malaria
+    - what are different malaria symptoms
+    - symptoms of malaria
+
+- intent: Cancer_Symptoms
+  examples: |
+    - cancer symptoms
+    - Cancer symptoms
+    - give me symptoms of cancer
+    - show the symptoms of cancer
+    - different cancer symptoms
+    - symptoms of cancer
+
+- intent: Tuberculosis_Symptoms
+  examples: |
+    - tuberculosis symptoms
+    - Tuberculosis symptoms
+    - symptoms of tb
+    - what are TB symptoms
+    - show me symptoms of TB
+
+- intent: Chikungunya_Symptoms
+  examples: |
+    - chikungunya symptoms
+    - give the symptoms of Chikungunya
+    - show me symptoms of chikungunya
+    - what are symptoms of chikungunya
+    - disease symptoms of chikungunya
+    - symptoms of chikungunya
+
+- intent: Typhoid_Symptoms
+  examples: |
+    - typhoid symptoms
+    - give me symptoms of typhoid
+    - what are typhoid symptoms
+    - show me symptoms of typhoid
+    - disease symptoms of typhoid
+    - symptoms of typhoid
+
+- intent: Diabetes_Symptoms
+  examples: |
+    - diabetes symptoms
+    - give me symptoms of diabetes
+    - what are Diabetes symptoms
+    - show me symptoms of Diabetes
+    - disease symptoms of diabetes
+    - symptoms of diabetes
+
+- intent: Asthma_Symptoms
+  examples: |
+    - Asthma symptoms
+    - give me symptoms of asthma
+    - what are asthma symptoms
+    - show me symptoms of Asthma
+    - disease symptoms of asthma
+    - symptoms of asthma
+
+- intent: User_symptoms_info
+  examples: |
+    - i am having [cold]{"entity":"SYMPTOM","value":"cold"} , [fever]{"entity":"SYMPTOM","value":"fever"} , [cough]{"entity":"SYMPTOM","value":"cough"}
+    - i am feeling [cold]{"entity":"SYMPTOM","value":"cold"} and [fever]{"entity":"SYMPTOM","value":"fever"} , [cough]{"entity":"SYMPTOM","value":"cough"}
+    - i am suffering [cold]{"entity":"SYMPTOM","value":"cold"} and [fever]{"entity":"SYMPTOM","value":"fever"} , [cough]{"entity":"SYMPTOM","value":"cough"}
+    - i feel like [cold]{"entity":"SYMPTOM","value":"cold"} and [fever]{"entity":"SYMPTOM","value":"fever"} , [cough]{"entity":"SYMPTOM","value":"cough"}
+    - i think have [cold]{"entity":"SYMPTOM","value":"cold"} and [fever]{"entity":"SYMPTOM","value":"fever"} , [cough]{"entity":"SYMPTOM","value":"cough"}
+
+- intent: Other_Disease
+  examples: |
+    - [Chickenpox]{"entity":"new_disease"}
+    - tell me about [Dehydration]{"entity":"new_disease"}
+    - need info about [Epilepsy]{"entity":"new_disease"}
+    - [Flu]{"entity":"new_disease"}
+    - [Chest pain]{"entity":"new_disease"} disease info
+    - [Gout]{"entity":"new_disease"} info
+    - disease info of [Piles]{"entity":"new_disease"}
+    - i need information regarding [HIV]{"entity":"new_disease"}
+    - give something related to [Insomnia]{"entity":"new_disease"}
+    - [Down's syndrome]{"entity":"new_disease"}
+    - [Lupus]{"entity":"new_disease"} disease information
+    - [Measles]{"entity":"new_disease"} information
+    - [Yellow fever]{"entity":"new_disease"} disease
+    - disease info about [Obesity]{"entity":"new_disease"}
+    - disease info related to [Scabies]{"entity":"new_disease"}
+    - [Hepatitis A]{"entity":"new_disease"} disease info
+    - i need to know about [Miscarriage]{"entity":"new_disease"}
+    - can you give information related to [Kidney stones]{"entity":"new_disease"} disease
+    - what happens in [Bone cancer]{"entity":"new_disease"}
+    - info regarding [Lactose intolerance]{"entity":"new_disease"}
+    - [Panic disorder]{"entity":"new_disease"} disease
+    - what is [Lung cancer]{"entity":"new_disease"}
+
+- intent: Other_Symptom
+  examples: |
+    - i want to know symptoms about [Anxiety]{"entity":"new_disease"}
+    - tell me symptoms about [Alzheimers]{"entity":"new_disease"}
+    - need symptoms about [Bronchitis]{"entity":"new_disease"}
+    - [Common cold]{"entity":"new_disease"} symptoms
+    - [Dehydration]{"entity":"new_disease"} possible symptoms
+    - symptoms of [Diarrhoea]{"entity":"new_disease"}
+    - symptoms in [Ebola]{"entity":"new_disease"}
+    - give some symptoms related to [E. coli]{"entity":"new_disease"}
+    - how to know if i have [Mumps]{"entity":"new_disease"}
+    - what are visible changes in [Menopause]{"entity":"new_disease"}
+    - tell me physique changes happening in [MS]{"entity":"new_disease"}
+    - physical changes occuring in [Labyrinthitis]{"entity":"new_disease"}
+    - disease symptoms related to [Huntington]{"entity":"new_disease"}
+    - Symptom info related to [MND]{"entity":"new_disease"}
+    - Changes observed in [Hepatitis C]{"entity":"new_disease"}
+    - i need to know about symptoms observed during [Menieres]{"entity":"new_disease"}
+    - symptoms of [Obsessive compulsive disorder]{"entity":"new_disease"} disease
+    - can you give information related to symptoms of [Migraine]{"entity":"new_disease"} disease
+    - Bone cancer]{"entity":"new_disease"} common symptoms
+    - [Indigestion]{"entity":"new_disease"} symptom
+    - Symptoms for [Pancreatic cancer]{"entity":"new_disease"}
+    - tell me symptoms about [Wilms tumour]{"entity":"new_disease"}
+    - i need symptom information regarding [Testicular cancer]{"entity":"new_disease"}
+    - give some symptoms related to [Schizophrenia]{"entity":"new_disease"}
+
+
+- intent: Appointment
+  examples: |
+    - i need an appointment
+    - book me an appointment
+    - please provide me appointment details
+    - appointment
+    - booking for a appointment
+    - book an appointment
+
+- intent: out_of_scope
+  examples: |
+    - who is the prime minister of india
+    - what is 2+2
+    - I want to order food
+    - what is the big bang theory?
+    - tell me about the quantum physics
+    - how to file a tax return?
+    - fastest animal on earth?
+
+- intent: reason_appointment
+  examples: |
+    - i want to meet [Doctor Visit]{"entity":"reason"}
+    - [Doctor Visit]{"entity":"reason"}
+    - [Doctor Visit]{"entity":"reason"} for a meeting
+    - perform [Blood Test]{"entity":"reason"}
+    - carry out urine and [Blood Test]{"entity":"reason"}
+    - [Blood Test]{"entity":"reason"}
+    - [X Ray]{"entity":"reason"} for my left leg
+    - chest [X Ray]{"entity":"reason"}
+    - [X Ray]{"entity":"reason"}
+    - [Other]{"entity":"reason"} i want to have a body scan
+    - [Other]{"entity":"reason"}
+
+- intent: time_slot
+  examples: |
+    - [9AM]{"entity":"time"} in the morning
+    - scheduled meeting for [9AM]{"entity":"time"}
+    - [9AM]{"entity":"time"} hours
+    - [11AM]{"entity":"time"} in the morning
+    - scheduled meeting for [11AM]{"entity":"time"}
+    - [11AM]{"entity":"time"} hours
+    - for [2PM]{"entity":"time"} clock in the noon
+    - scheduled meeting for [2PM]{"entity":"time"}
+    - [2PM]{"entity":"time"} hours
+    - for [4PM]{"entity":"time"} clock in the evening
+    - scheduled meeting for [4PM]{"entity":"time"}
+    - [4PM]{"entity":"time"} hours
+
+- intent: user_Symp
+  examples: |
+    - i have [cough,fever,cold,tiredness,loss of smell]{"entity":"user_symptoms"}
+    - [cough,fever,cold,tiredness,loss of smell,headache]{"entity":"user_symptoms"}
+    - [cough,fever,cold,tiredness,Stomachache,headache,vomiting]{"entity":"user_symptoms"}
+
+- regex: user_symptoms
+  examples: |
+    - (.+?)(?:,|$)

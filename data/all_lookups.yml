@@ -1,0 +1,143 @@
+version: "2.0"
+
+nlu:
+
+- lookup: location
+  examples: |
+    - Ghatkopar
+    - Bandra
+    - Navi Mumbai
+    - Chembur
+    - Belapur
+    - Borivali
+    - DN Nagar
+    - Jogeshwari
+    - Byculla
+    - Andheri
+    - Mahim
+    - South Mumbai
+    - Thane
+    - Sion
+    - Govandi
+    - Vikhroli
+    - Santacruz
+    - Malad
+    - Vashi
+    - South Bombay
+    - Kandivali
+    - Mulund
+    - Goregaon
+    - Badlapur
+    - Dombivali
+    - Juhu
+    - Ville Parle
+
+- lookup: new_disease
+  examples: |
+    - Anxiety
+    - Alzheimers
+    - Addison's
+    - Bone cancer
+    - Brain tumour
+    - Bronchitis
+    - Chickenpox
+    - Chest pain
+    - Chronic pancreatitis
+    - Common cold
+    - Constipation
+    - Cough
+    - Dehydration
+    - Dementia
+    - Depression
+    - Diarrhoea
+    - Dizziness
+    - Down's syndrome
+    - Dry mouth
+    - Dysphagia
+    - Dystonia
+    - Ebola
+    - Epilepsy
+    - Erectile dysfunction
+    - E. coli
+    - Eye cancer
+    - Fever
+    - Flu
+    - Food poisoning
+    - Fungal nail infection
+    - Gallstones
+    - Gastroenteritis
+    - Gonorrhoea
+    - Gout
+    - Gum disease
+    - Piles
+    - Hay fever
+    - Hearing loss
+    - Heart failure
+    - Hepatitis A
+    - Hepatitis B
+    - Hepatitis C
+    - High cholesterol
+    - HIV
+    - Huntington
+    - Hyperglycaemia
+    - Hypoglycaemia
+    - Hyperhidrosis
+    - Impetigo
+    - Indigestion
+    - Insomnia
+    - Iron deficiency anaemia
+    - Irritable bowel syndrome
+    - Itching
+    - Kidney infection
+    - Kidney stones
+    - Labyrinthitis
+    - Lactose intolerance
+    - Laryngitis
+    - Leg cramps
+    - Lichen planus
+    - Liver disease
+    - Liver tumours
+    - Lung cancer
+    - Lupus
+    - Lyme disease
+    - Lymphoedema
+    - LGV
+    - Measles
+    - Menopause
+    - Migraine
+    - Miscarriage
+    - MND
+    - Mouth ulcer
+    - MS
+    - Mumps
+    - Menieres
+    - Malnutrition
+    - Nasal and sinus cancer
+    - Nasopharyngeal cancer
+    - Neuroblastoma
+    - Obesity
+    - Obsessive compulsive disorder
+    - Obstructive sleep apnoea
+    - Pagets disease of the nipple
+    - Pancreatic cancer
+    - Panic disorder
+    - Rare tumours
+    - Raynauds phenomenon
+    - Reactive arthritis
+    - Scabies
+    - Scarlet fever
+    - Schizophrenia
+    - Testicular cancer
+    - Thirst
+    - Threadworms
+    - Ulcerative colitis
+    - Underactive thyroid
+    - Urinary incontinence
+    - Vaginal cancer
+    - Varicose eczema
+    - Venous leg ulcer
+    - Warts and verrucas
+    - Wilms tumour
+    - Yellow fever
+
+
